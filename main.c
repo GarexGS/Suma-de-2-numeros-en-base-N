@@ -2,8 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-char result[100];
-
+//definicion de la estructura lista doblemente enlazada
 struct nodo {
     int num;
     struct nodo *sig;
@@ -17,7 +16,7 @@ void cambioDeBase(long int iDec, int numbase,struct nodo **inicio, struct nodo *
 void sumarDosNumeros(struct nodo **inicio1, struct nodo **final1,struct nodo **inicio2, struct nodo **final2,int base);
 //Prototipo de la funcion validar cifra
 int validarCifra(int cifra);
-//Prototipos de las funciones para la Cola
+//Prototipos de las funciones para la lista
 bool isVacia(struct nodo **inicio);
 void insertar(struct nodo **inicio, struct nodo **final, int num);
 void imprimir(struct nodo *inicio);
@@ -26,7 +25,7 @@ void liberar(struct nodo **inicio);
 
     
 int main(){
-    int num1, num2, base, index;
+    int num1, num2, base;
     bool repeat = true;
 
     struct nodo *inicioN1 = NULL;
@@ -96,31 +95,23 @@ void sumarDosNumeros(struct nodo **inicio1, struct nodo **final1,struct nodo **i
         int cifraNum1 = extraer(inicio1,final1);
         int cifraNum2 = extraer(inicio2,final2);
 
-        // printf("\n cifraNum1= %d\ncifraNum2 = %d\n",cifraNum1,cifraNum2);
-        // system("pause");
-
         if(cifraNum1 == -1 && cifraNum2 == -1 && acarreo == 0){
             repeat = false;
             break;
         }
         if(cifraNum1 == -1)
-            cifraNum1 = 48; //valor ASCII de cero
+            cifraNum1 = 48; //valor ASCII del numero cero
         if(cifraNum2 == -1)
-            cifraNum2 = 48; //valor ASCII de cero
+            cifraNum2 = 48; //valor ASCII del numero cero
 
         cifraNum1 = validarCifra(cifraNum1);
         cifraNum2 = validarCifra(cifraNum2);
 
         resultado = cifraNum1 + cifraNum2 + acarreo;
-        // printf("\n%d + %d + %d = %d \n",cifraNum1,cifraNum2,acarreo,resultado);
-        // printf("\n %d / %d = %d\n",resultado,base,resultado % base);
         
         converted_number[index] = (int)(resultado % base);
         acarreo = resultado / base;
-        
-        // printf(" = %d -> %d ",converted_number[index], acarreo);
-        // system("pause");
-        
+            
         index++;
 
     }while(repeat);

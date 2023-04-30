@@ -89,10 +89,3 @@ void liberar(){
         free(bor);
     }
 }
-
-
-// insertar(&inicio,&final,15);
-// insertar(&inicio,&final,5);
-// insertar(&inicio,&final,10);
-// extraer(&inicio,&final);
-// imprimir(inicio);
