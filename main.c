@@ -2,6 +2,14 @@
 #include <stdlib.h>
 #include <stdbool.h> // se utiliza para las variables booleanas (true | false)
 
+/*
+    Se utilizaron apuntadores que si usamos arreglos
+    la cantidad de cifras que se podran sumar estarán limitadas al numero que se asigno al arreglo
+    Ejemplo: int suma [10];
+    en este caso solo podemos almacenar números con 10 cifras o dígitos
+    pero si al sumar exedemos estos dígitos ocurrirá un error en el programa
+*/
+
 // Definición de la estructura lista doblemente enlazada
 // Teoría para entender que es una lista https://youtu.be/15urP2LmfqY
 struct nodo {
