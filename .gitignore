@@ -1,4 +1,4 @@
 # Ignora el archivo ejecutable
 *.exe
 # Ignora la carpeta output
-output
+/output
