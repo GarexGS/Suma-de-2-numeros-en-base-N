@@ -1,3 +1,6 @@
+/* 
+    sumar 2 números de diferente base
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
